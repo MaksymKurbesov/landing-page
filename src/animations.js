@@ -42,5 +42,5 @@ function setupSplits() {
 }
 
 // gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.addEventListener("refresh", setupSplits);
+// ScrollTrigger.addEventListener("refresh", setupSplits);
 setupSplits();
