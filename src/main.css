@@ -444,6 +444,7 @@ footer {
   padding: 34px;
   font-weight: 700;
   transition: 0.35s ease all;
+  z-index: 5;
 }
 
 .wrap{
@@ -464,7 +465,7 @@ footer {
 }
 
 .quote {
-  font-size:clamp(0.8rem, 1.4rem + 2.58vw, 5rem);
+  font-size:clamp(0.8rem, 0.9rem + 2.58vw, 5rem);
   line-height: 1;
   color:white;
   font-weight: 700;
