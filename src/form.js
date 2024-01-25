@@ -1,5 +1,6 @@
 import "./index.css";
 import "./hamburger";
+import "./popup";
 const questionElement = document.querySelector(".question");
 const backButtonElement = document.querySelector(".back-button");
 const nextButtonElement = document.querySelector(".next-button");

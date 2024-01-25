@@ -37,7 +37,9 @@
                 <li><a href="#contact-us">Связаться</a></li>
               </ul>
             </nav>
-            <button class="button consult-button">Получить консультацию</button>
+            <a class="button consult-button open-popup btn-4">
+              <span>Получить консультацию</span>
+            </a>
             <div class="hamburger">
               <span></span>
               <span></span>
@@ -63,7 +65,7 @@
         </div>
         <span id="typed-text"></span>
 
-        <a class="button start-invest-button" href="./form.html"
+        <a class="button start-invest-button btn-4" href="./form.html"
           >Начать инвестировать</a
         >
       </div>
@@ -260,7 +262,7 @@
               не упустить хорошие возможности для вложений. Бронируй своё
               участие в покупке высокодоходных объектов уже сейчас.
             </p>
-            <a href="./form.html" class="button booking-button"
+            <a href="./form.html" class="button booking-button btn-4"
               >Забронировать участие</a
             >
           </div>
@@ -306,7 +308,7 @@
           <form>
             <input type="text" placeholder="Ваше имя" />
             <input type="text" placeholder="Ваш номер" />
-            <button>Отправить заявку</button>
+            <button class="send-request-button">Отправить заявку</button>
           </form>
         </div>
       </div>
@@ -343,7 +345,7 @@
               Наша основа - сообщество и то, как мы через технологии и
               недвижимость находим возможности изменить нашу жизнь.
             </p>
-            <a class="button">Получить консультацию</a>
+            <a class="button open-popup btn-4">Получить консультацию</a>
           </div>
           <div class="contacts">
             <h3>Контакты</h3>
@@ -362,6 +364,28 @@
         </div>
       </div>
     </footer>
+    <div class="popup__bg">
+      <form class="popup">
+        <h3>
+          Оставьте свои данные, и наш специалист свяжется с Вами в ближайшее
+          время, чтобы предоставить консультацию.
+        </h3>
+        <img src="./assets/images/close.svg" class="close-popup" width="30" />
+        <label>
+          <input type="text" name="name" />
+          <div class="label__text">Ваше имя</div>
+        </label>
+        <label>
+          <input type="tel" name="tel" />
+          <div class="label__text">Ваш телефон</div>
+        </label>
+        <label>
+          <input type="text" name="messenger" />
+          <div class="label__text">Ваш мессенджер</div>
+        </label>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
     <div class="up-page-button">
       <img src="./assets/images/arrow.svg" width="35" />
     </div>

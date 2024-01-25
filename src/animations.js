@@ -33,7 +33,7 @@ function setupSplits() {
     y: -80,
   });
 
-  startInvestButton.anim = gsap.from(startInvestButton, {
+  gsap.from(startInvestButton, {
     opacity: 0,
     duration: 1,
     delay: 2,

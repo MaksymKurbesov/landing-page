@@ -2,6 +2,7 @@ import "./index.css";
 import "./hamburger";
 import Typed from "typed.js";
 import "./animations";
+import "./popup";
 
 if (module.hot) module.hot.accept();
 
