@@ -429,7 +429,7 @@ a {
   }
 
   .mobile-menu {
-    top: -255px;
+    top: -405px;
     z-index: 4;
   }
 
@@ -449,6 +449,14 @@ a {
 
   .consult-button {
     display: none;
+  }
+
+  .mobile-menu ul {
+    margin-bottom: 30px;
+  }
+
+  .consult-menu-button {
+    display: block;
   }
 
   .start-invest-button {

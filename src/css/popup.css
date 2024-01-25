@@ -119,3 +119,15 @@
   transition: 0.5s all;
   border: 1px solid var(--gradient-A);
 }
+
+@media screen and (max-width: 600px) {
+  .popup {
+    width: 95%;
+    padding: 40px 25px;
+  }
+
+  .close-popup {
+    top: 15px;
+    right: 15px;
+  }
+}
