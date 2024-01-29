@@ -4,12 +4,32 @@
     <meta charset="UTF-8" />
     <title>Инвестиции в недвижимость Кипра<</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
   </head>
   <body class="form">
+    <div class="transition transition-3"></div>
     <section class="quiz">
       <header>
         <div class="container">
           <div class="header-wrapper">
+            <div class="menu-background">
+              <div class="mobile-menu">
+                <img src="./assets/images/logo.svg" width="150" alt="" />
+                <nav>
+                  <ul>
+                    <li><a href="#change-life">Преимущества</a></li>
+                    <li><a href="#plans">Планы</a></li>
+                    <li><a href="#work-stages">Этапы работы</a></li>
+                    <li><a href="#contact-us">Связаться</a></li>
+                  </ul>
+                  <a
+                    class="button consult-menu-button consult-button open-popup btn-4"
+                  >
+                    <span>Получить консультацию</span>
+                  </a>
+                </nav>
+              </div>
+            </div>
             <a href="./"
               ><img
                 class="logo"
@@ -19,29 +39,25 @@
             /></a>
             <nav class="nav">
               <ul>
-                <li><a href="./#change-life">Преимущества</a></li>
-                <li><a href="./#plans">Планы</a></li>
-                <li><a href="./#work-stages">Этапы работы</a></li>
-                <li><a href="./#contact-us">Связаться</a></li>
+                <li><a href="#change-life">Преимущества</a></li>
+                <li><a href="#plans">Планы</a></li>
+                <li><a href="#work-stages">Этапы работы</a></li>
+                <li><a href="#contact-us">Связаться</a></li>
               </ul>
             </nav>
-            <a class="button consult-button open-popup btn-4">
-              Получить консультацию
+            <a class="consult-button open-popup btn-4">
+              <span
+                ><img
+                  src="./assets/images/consult-icon.svg"
+                  width="15"
+                  alt=""
+                />Получить консультацию</span
+              >
             </a>
             <div class="hamburger">
               <span></span>
               <span></span>
               <span></span>
-            </div>
-            <div class="mobile-menu">
-              <nav>
-                <ul>
-                  <li><a href="./#change-life">Преимущества</a></li>
-                  <li><a href="./#plans">Планы</a></li>
-                  <li><a href="./#work-stages">Этапы работы</a></li>
-                  <li><a href="./#contact-us">Связаться</a></li>
-                </ul>
-              </nav>
             </div>
           </div>
         </div>
@@ -106,7 +122,25 @@
     <footer>
       <div class="container">
         <div class="top-row">
-          <img src="./assets/images/logo-black.svg" width="200" />
+          <div class="first-column">
+            <img src="./assets/images/logo.svg" width="200" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#change-life">Преимущества</a></li>
+              <li><a href="#plans">Планы</a></li>
+              <li><a href="#work-stages">Этапы работы</a></li>
+              <li><a href="#contact-us">Связаться</a></li>
+            </ul>
+            <a class="consult-button consult-button-footer open-popup btn-4">
+              <span
+                ><img
+                  src="./assets/images/consult-icon.svg"
+                  width="15"
+                />Получить консультацию</span
+              >
+            </a>
+          </nav>
           <ul>
             <li>
               <a
@@ -129,51 +163,38 @@
             </li>
           </ul>
         </div>
-        <div class="bottom-row">
-          <div class="first-column">
-            <p>
-              Наша основа - сообщество и то, как мы через технологии и
-              недвижимость находим возможности изменить нашу жизнь.
-            </p>
-            <a class="button open-popup btn-4">Получить консультацию</a>
-          </div>
-          <div class="contacts">
-            <h3>Контакты</h3>
-            <p>support@apatecyprusestate.com</p>
-            <p>+345783475345</p>
-          </div>
-          <div class="navigation">
-            <h3>Навигация</h3>
-            <ul>
-              <li><a href="./#change-life">Преимущества</a></li>
-              <li><a href="./#plans">Планы</a></li>
-              <li><a href="./#work-stages">Этапы работы</a></li>
-              <li><a href="./#contact-us">Связаться</a></li>
-            </ul>
-          </div>
-        </div>
       </div>
     </footer>
     <div class="popup__bg">
       <form class="popup">
-        <h3>
+        <img
+          class="popup-image"
+          src="./assets/images/popup-bg.png"
+          width="100%"
+          height="250"
+        />
+        <h3 class="popup-subtitle">
           Оставьте свои данные, и наш специалист свяжется с Вами в ближайшее
           время, чтобы предоставить консультацию.
         </h3>
         <img src="./assets/images/close.svg" class="close-popup" width="30" />
         <label>
-          <input type="text" name="name" />
-          <div class="label__text">Ваше имя</div>
+          <input
+            class="popup-name"
+            type="text"
+            name="name"
+            placeholder="Ваше имя"
+          />
         </label>
         <label>
-          <input type="tel" name="tel" />
-          <div class="label__text">Ваш телефон</div>
+          <input
+            class="popup-phone"
+            type="tel"
+            name="tel"
+            placeholder="Ваш телефон"
+          />
         </label>
-        <label>
-          <input type="text" name="messenger" />
-          <div class="label__text">Ваш мессенджер</div>
-        </label>
-        <button type="submit">Отправить</button>
+        <button class="submit-popup" type="submit">Отправить</button>
       </form>
     </div>
   </body>

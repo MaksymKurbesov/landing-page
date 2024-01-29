@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Инвестиции в недвижимость Кипра</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
     <style>
       * {
         padding: 0;
@@ -12,8 +13,47 @@
         scroll-behavior: smooth;
       }
     </style>
+
+    <!-- Meta Pixel Code -->
+    <script type="text/javascript">
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "idpixel");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=idpixe&ev=PageView&noscript=1"
+        alt=""
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   <script defer src="index.bundle.js"></script></head>
   <body>
+    <div class="transition transition-3"></div>
     <section class="main">
       <video
         autoplay
@@ -28,6 +68,24 @@
       <header>
         <div class="container">
           <div class="header-wrapper">
+            <div class="menu-background">
+              <div class="mobile-menu">
+                <img src="./assets/images/logo.svg" width="150" alt="" />
+                <nav>
+                  <ul>
+                    <li><a href="#change-life">Преимущества</a></li>
+                    <li><a href="#plans">Планы</a></li>
+                    <li><a href="#work-stages">Этапы работы</a></li>
+                    <li><a href="#contact-us">Связаться</a></li>
+                  </ul>
+                  <a
+                    class="button consult-menu-button consult-button open-popup btn-4"
+                  >
+                    <span>Получить консультацию</span>
+                  </a>
+                </nav>
+              </div>
+            </div>
             <a href="./"
               ><img
                 class="logo"
@@ -43,29 +101,19 @@
                 <li><a href="#contact-us">Связаться</a></li>
               </ul>
             </nav>
-            <a class="button consult-button open-popup btn-4">
-              <span>Получить консультацию</span>
+            <a class="consult-button open-popup btn-4">
+              <span
+                ><img
+                  src="./assets/images/consult-icon.svg"
+                  width="15"
+                  alt=""
+                />Получить консультацию</span
+              >
             </a>
             <div class="hamburger">
               <span></span>
               <span></span>
               <span></span>
-            </div>
-            <div class="mobile-menu">
-              <img src="./assets/images/logo.svg" width="150" />
-              <nav>
-                <ul>
-                  <li><a href="#change-life">Преимущества</a></li>
-                  <li><a href="#plans">Планы</a></li>
-                  <li><a href="#work-stages">Этапы работы</a></li>
-                  <li><a href="#contact-us">Связаться</a></li>
-                </ul>
-                <a
-                  class="button consult-menu-button consult-button open-popup btn-4"
-                >
-                  <span>Получить консультацию</span>
-                </a>
-              </nav>
             </div>
           </div>
         </div>
@@ -75,7 +123,9 @@
         <div class="wrap">
           <p class="quote">Инвестиции в недвижимость на живописном Кипре</p>
         </div>
-        <span id="typed-text"></span>
+        <div class="typed-text-wrapper">
+          <span id="typed-text"></span>
+        </div>
       </div>
       <a class="button start-invest-button btn-4" href="./form.html"
         >Начать инвестировать</a
@@ -95,7 +145,7 @@
         </div>
 
         <ul class="change-life-list">
-          <li>
+          <li class="custom-border">
             <img alt="" src="./assets/images/lowrisk.svg" height="60" />
             <h3>Низкие риски</h3>
             <p>
@@ -104,7 +154,7 @@
               разделяете риски владения имуществом.
             </p>
           </li>
-          <li>
+          <li class="custom-border">
             <img alt="" src="./assets/images/independent.svg" height="60" />
             <h3>Независимость</h3>
             <p>
@@ -112,7 +162,7 @@
               компанией, это обеспечивает безопасность владения недвижимостью.
             </p>
           </li>
-          <li>
+          <li class="custom-border">
             <img alt="" src="./assets/images/insurance.svg" height="60" />
             <h3>Страхование</h3>
             <p>
@@ -120,7 +170,7 @@
               ваших инвестиций.
             </p>
           </li>
-          <li>
+          <li class="custom-border">
             <img alt="" src="./assets/images/audit.svg" height="60" />
             <h3>Аудит и рейтинг</h3>
             <p>
@@ -128,7 +178,7 @@
               качественный пул арендаторов и стабильную долгосрочную доходность.
             </p>
           </li>
-          <li>
+          <li class="custom-border">
             <img alt="" src="./assets/images/security.svg" height="60" />
             <h3>Безопасность</h3>
             <p>
@@ -153,106 +203,103 @@
     <section class="plans" id="plans">
       <div class="container">
         <h2 class="section-title">
-          Раскрой для себя <br />
-          все возможности инвестиций
+          Ключевые преимущества инвестирования в недвижимость Кипра
         </h2>
-        <ul class="plans-list">
-          <li>
-            <h3>Регион "Limassol"</h3>
-            <p>— Коммерческий центр</p>
-            <p>— Роскошный пляжный отдых</p>
-            <ul class="tags">
-              <li>33 дня</li>
-              <li>1.2% в день</li>
-              <li>Ежедневно</li>
-              <li>От 100$</li>
-              <li>ROI ~40%</li>
-            </ul>
+        <ul class="features-list">
+          <li class="custom-border">
+            <img src="./assets/images/feature-1.png" height="120" />
+            <h3>Стабильный рынок недвижимости</h3>
+            <p>
+              Кипр имеет стабильный рынок недвижимости с постепенным ростом цен.
+              Это делает инвестиции относительно безопасными и предсказуемыми.
+            </p>
           </li>
-          <li>
-            <h3>Регион "Famagusta"</h3>
-            <p>— Историческое наследие</p>
-            <p>— Культурный туризм</p>
-            <ul class="tags">
-              <li>26 дней</li>
-              <li>2.1% в день</li>
-              <li>Ежедневно</li>
-              <li>От 1000$</li>
-              <li>ROI ~54%</li>
-            </ul>
+          <li class="custom-border">
+            <img src="./assets/images/feature-2.png" height="120" />
+            <h3>Программы для инвесторов</h3>
+            <p>
+              Кипр предлагает программы для инвесторов, такие как «Золотая
+              виза», которая предоставляет право на постоянное проживание или
+              гражданство в обмен на инвестиции в недвижимость.
+            </p>
           </li>
-          <li>
-            <h3>Регион "Larnaca"</h3>
-            <p>— Транспортный узел</p>
-            <p>— Развитая инфраструктура</p>
-            <ul class="tags">
-              <li>19 дней</li>
-              <li>3% в день</li>
-              <li>Ежедневно</li>
-              <li>От 7000$</li>
-              <li>ROI ~57%</li>
-            </ul>
+          <li class="custom-border">
+            <img src="./assets/images/feature-4.png" height="120" />
+            <h3>Налоговые льготы</h3>
+            <p>
+              Страна предлагает выгодные налоговые условия, включая низкие
+              корпоративные налоги, отсутствие налога на наследство и
+              возможности для налогового планирования через инвестиции.
+            </p>
           </li>
-          <li>
-            <h3>Регион "Paphos"</h3>
-            <p>— Культурные памятники</p>
-            <p>— Гольф-резорты</p>
-            <ul class="tags">
-              <li>12 дней</li>
-              <li>55%</li>
-              <li>По завершению</li>
-              <li>От 15000$</li>
-              <li>ROI ~55%</li>
-            </ul>
+          <li class="custom-border">
+            <img src="./assets/images/feature-3.png" height="120" />
+            <h3>Стратегическое расположение</h3>
+            <p>
+              Кипр находится на перекрестке между Европой, Азией и Африкой, что
+              делает его привлекательным местом для бизнеса и туризма.
+            </p>
           </li>
-          <li>
-            <h3>Регион "Nicosia"</h3>
-            <p>— Финансовый центр</p>
-            <p>— Бизнес-инфраструктура</p>
-            <ul class="tags">
-              <li>7 дней</li>
-              <li>41%</li>
-              <li>По завершению</li>
-              <li>От 30000$</li>
-              <li>ROI ~41%</li>
-            </ul>
+          <li class="custom-border">
+            <img src="./assets/images/feature-6.png" height="120" />
+            <h3>Высокий уровень жизни</h3>
+            <p>
+              Кипр предлагает высокий уровень жизни, прекрасный климат, богатую
+              культуру и безопасную среду для жизни и ведения бизнеса.
+            </p>
           </li>
-          <li>
-            <h3>Индивидуальный</h3>
-            <p>— Лучшие условия для каждого инвестора</p>
-            <p>— Экслюзивные предложения от компании</p>
-            <ul class="tags">
-              <li>Индивидуально</li>
-              <li>Индивидуально</li>
-              <li>По завершению</li>
-              <li>От 50000$</li>
-            </ul>
+          <li class="custom-border">
+            <img src="./assets/images/feature-5.png" height="120" />
+            <h3>Возможности для аренды</h3>
+            <p>
+              Туризм является одним из основных источников дохода для экономики
+              Кипра, что создает высокий спрос на арендуемую недвижимость и
+              возможность получения стабильного дохода от инвестиций.
+            </p>
+          </li>
+          <li class="custom-border">
+            <img src="./assets/images/feature-7.png" height="120" />
+            <h3>Европейские стандарты инфраструктуры</h3>
+            <p>
+              Кипр предлагает современную инфраструктуру, высококачественные
+              медицинские услуги и образовательные учреждения, что делает его
+              привлекательным местом для жизни.
+            </p>
+          </li>
+          <li class="custom-border">
+            <img src="./assets/images/feature-8.png" height="120" />
+            <h3>Ликвидность рынка</h3>
+            <p>
+              Рынок недвижимости Кипра характеризуется достаточной ликвидностью,
+              позволяя инвесторам при необходимости относительно легко продать
+              свою недвижимость.
+            </p>
           </li>
         </ul>
       </div>
     </section>
     <section class="work-stages" id="work-stages">
       <div class="container">
-        <h2 class="section-title">Этапы работы нашей системы</h2>
+        <h2 class="section-title">Этапы работы</h2>
         <ul class="work-stages-list">
-          <li>
+          <li class="custom-border">
             <span>1</span>
             <h3>Отбор</h3>
             <p>
               Мы находим и проверяем инвестиционную недвижимость или проекты.
             </p>
           </li>
-          <li>
+          <li class="custom-border">
             <span>2</span>
             <h3>Сбор капитала</h3>
             <p>Размещаем недвижимость или проекты на платформе.</p>
           </li>
-          <li>
+          <li class="custom-border">
             <span>3</span>
             <h3>Исполнение</h3>
             <p>Наши фонды занимаются управлением капитала.</p>
           </li>
-          <li>
+          <li class="custom-border">
             <span>4</span>
             <h3>Доход</h3>
             <p>Доход распределяется пропорционально инвестициям на ваш счёт.</p>
@@ -273,35 +320,31 @@
               не упустить хорошие возможности для вложений. Бронируй своё
               участие в покупке высокодоходных объектов уже сейчас.
             </p>
-            <a href="./form.html" class="button booking-button btn-4"
+            <a href="./form.html" class="button booking-button"
               >Забронировать участие</a
             >
           </div>
-
-          <div class="calendar-image">
-            <img src="./assets/images/calendar2.png" width="70" />
-            <img src="./assets/images/calendar1.png" width="350" />
-          </div>
+          <img class="clock" src="./assets/images/calendar3.png" width="70%" />
           <h2 class="section-title booking-title-mobile">
             Раннее бронирование
           </h2>
         </div>
         <ul class="conditions-list">
-          <li>
+          <li class="custom-border">
             <img src="./assets/images/first.svg" height="50" />
             <div>
               <h3>Будь первым в сделке</h3>
               <p>Используй все преимущества раннего бронирования</p>
             </div>
           </li>
-          <li>
+          <li class="custom-border">
             <img src="./assets/images/news.svg" height="50" />
             <div>
               <h3>Узнавай новости первым</h3>
               <p>Получай рассылку о новых возможностях и предложениях</p>
             </div>
           </li>
-          <li>
+          <li class="custom-border">
             <img src="./assets/images/conditions.svg" height="50" />
             <div>
               <h3>Получай особые условия</h3>
@@ -313,12 +356,12 @@
     </section>
     <section class="start-invest-form" id="contact-us">
       <div class="container">
-        <div class="start-invest-form-wrapper">
+        <div class="start-invest-form-wrapper custom-border">
           <h2 class="section-title">Начать инвестировать с нами</h2>
           <p>Введите номер телефона, чтобы получить подробную консультацию</p>
           <form>
-            <input type="text" placeholder="Ваше имя" />
-            <input type="text" placeholder="Ваш номер" />
+            <input class="name-input" type="text" placeholder="Ваше имя" />
+            <input class="phone-input" type="text" placeholder="Ваш номер" />
             <button class="send-request-button">Отправить заявку</button>
           </form>
         </div>
@@ -327,8 +370,26 @@
     <footer>
       <div class="container">
         <div class="top-row">
-          <img src="./assets/images/logo-black.svg" width="200" />
-          <ul>
+          <div class="first-column">
+            <img src="./assets/images/logo.svg" width="200" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#change-life">Преимущества</a></li>
+              <li><a href="#plans">Планы</a></li>
+              <li><a href="#work-stages">Этапы работы</a></li>
+              <li><a href="#contact-us">Связаться</a></li>
+            </ul>
+            <a class="consult-button consult-button-footer open-popup btn-4">
+              <span
+                ><img
+                  src="./assets/images/consult-icon.svg"
+                  width="15"
+                />Получить консультацию</span
+              >
+            </a>
+          </nav>
+          <ul class="social-links">
             <li>
               <a
                 target="_blank"
@@ -350,51 +411,38 @@
             </li>
           </ul>
         </div>
-        <div class="bottom-row">
-          <div class="first-column">
-            <p>
-              Наша основа - сообщество и то, как мы через технологии и
-              недвижимость находим возможности изменить нашу жизнь.
-            </p>
-            <a class="button open-popup btn-4">Получить консультацию</a>
-          </div>
-          <div class="contacts">
-            <h3>Контакты</h3>
-            <p>support@apatecyprusestate.com</p>
-            <p>+345783475345</p>
-          </div>
-          <div class="navigation">
-            <h3>Навигация</h3>
-            <ul>
-              <li><a href="#change-life">Преимущества</a></li>
-              <li><a href="#plans">Планы</a></li>
-              <li><a href="#work-stages">Этапы работы</a></li>
-              <li><a href="#contact-us">Связаться</a></li>
-            </ul>
-          </div>
-        </div>
       </div>
     </footer>
     <div class="popup__bg">
       <form class="popup">
-        <h3>
+        <img
+          class="popup-image"
+          src="./assets/images/popup-bg.png"
+          width="100%"
+          height="250"
+        />
+        <h3 class="popup-subtitle">
           Оставьте свои данные, и наш специалист свяжется с Вами в ближайшее
           время, чтобы предоставить консультацию.
         </h3>
         <img src="./assets/images/close.svg" class="close-popup" width="30" />
         <label>
-          <input type="text" name="name" />
-          <div class="label__text">Ваше имя</div>
+          <input
+            class="popup-name"
+            type="text"
+            name="name"
+            placeholder="Ваше имя"
+          />
         </label>
         <label>
-          <input type="tel" name="tel" />
-          <div class="label__text">Ваш телефон</div>
+          <input
+            class="popup-phone"
+            type="tel"
+            name="tel"
+            placeholder="Ваш телефон"
+          />
         </label>
-        <label>
-          <input type="text" name="messenger" />
-          <div class="label__text">Ваш мессенджер</div>
-        </label>
-        <button type="submit">Отправить</button>
+        <button class="submit-popup" type="submit">Отправить</button>
       </form>
     </div>
     <div class="up-page-button">

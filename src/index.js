@@ -3,8 +3,12 @@ import "./hamburger";
 import Typed from "typed.js";
 import "./animations";
 import "./popup";
+import "./contactForm";
+import "./pageTransition";
 
 if (module.hot) module.hot.accept();
+
+fbq("track", "Lead");
 
 const upPageButton = document.querySelector(".up-page-button");
 

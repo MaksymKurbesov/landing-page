@@ -1,6 +1,8 @@
 import "./index.css";
 import "./hamburger";
 import "./popup";
+import "./pageTransition";
+
 const questionElement = document.querySelector(".question");
 const backButtonElement = document.querySelector(".back-button");
 const nextButtonElement = document.querySelector(".next-button");
@@ -98,21 +100,21 @@ const contactInputs = () => {
 
   inputPhone.type = "text";
   inputName.type = "text";
-  inputMessenger.type = "text";
-  inputEmail.type = "text";
+  // inputMessenger.type = "text";
+  // inputEmail.type = "text";
   inputPhone.id = "phone";
   inputName.id = "name";
-  inputMessenger.id = "messenger";
-  inputEmail.id = "email";
+  // inputMessenger.id = "messenger";
+  // inputEmail.id = "email";
   inputPhone.placeholder = "Ваш номер телефона";
   inputName.placeholder = "Ваше имя";
-  inputEmail.placeholder = "Ваш email";
-  inputMessenger.placeholder = "Профиль в мессенджере";
+  // inputEmail.placeholder = "Ваш email";
+  // inputMessenger.placeholder = "Профиль в мессенджере";
 
   optionsContainer.appendChild(inputName);
   optionsContainer.appendChild(inputPhone);
-  optionsContainer.appendChild(inputEmail);
-  optionsContainer.appendChild(inputMessenger);
+  // optionsContainer.appendChild(inputEmail);
+  // optionsContainer.appendChild(inputMessenger);
 };
 
 const displayStep = (step) => {

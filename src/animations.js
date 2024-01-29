@@ -1,14 +1,10 @@
 import { SplitText } from "./splitText";
 import { gsap } from "gsap";
 
-const startInvestButton = document.querySelector(".start-invest-button");
-const header = document.querySelector("header");
-
-const bookingWrapper = document.querySelector(".booking-wrapper");
-const startInvestWithUs = document.querySelector(".start-invest-form");
-
 const animateMain = () => {
   const quotes = document.querySelectorAll(".quote");
+  const startInvestButton = document.querySelector(".start-invest-button");
+  const header = document.querySelector("header");
 
   quotes.forEach((quote) => {
     // Reset if needed
@@ -40,7 +36,7 @@ const animateMain = () => {
     opacity: 0,
     duration: 1,
     delay: 2,
-    x: 40,
+    y: 40,
   });
 };
 const animateChangeLife = () => {
@@ -62,7 +58,7 @@ const animateChangeLife = () => {
         start: "bottom 80%",
         end: "+=200",
       },
-      x: 40,
+      y: 40,
       duration: 1,
       opacity: 0,
     });
@@ -114,7 +110,7 @@ const animateChangeLife = () => {
         start: "-200 center",
       },
       delay: 0.1 * index,
-      x: 40,
+      y: 40,
       duration: 1,
       opacity: 0,
     });
@@ -126,15 +122,15 @@ const animateChangeLife = () => {
       start: "bottom 80%",
       end: "+=200",
     },
-    x: -40,
+    y: -40,
     duration: 1,
     opacity: 0,
     delay: 0.5,
   });
 };
 const animatePlans = () => {
-  const plansContainer = document.querySelector(".plans-list");
-  const plansList = document.querySelectorAll(".plans-list li");
+  const plansContainer = document.querySelector(".features-list");
+  const plansList = document.querySelectorAll(".features-list li");
 
   plansList.forEach((plan, index) => {
     gsap.from(plan, {
@@ -142,7 +138,7 @@ const animatePlans = () => {
         trigger: plansContainer,
         start: "-200 center",
       },
-      delay: 0.1 * index,
+      delay: 0.3 * index,
       y: 40,
       duration: 1,
       opacity: 0,
@@ -159,7 +155,7 @@ const animateWorkStages = () => {
         start: "-200 center",
       },
       delay: 0.3 * index,
-      x: -40,
+      y: -40,
       duration: 1,
       opacity: 0,
     });
@@ -174,13 +170,15 @@ const animateConditionsList = () => {
         start: "-200 center",
       },
       delay: 0.3 * index,
-      x: 50,
+      y: 50,
       duration: 1,
       opacity: 0,
     });
   });
 };
 const animateEarlyBooking = () => {
+  const bookingWrapper = document.querySelector(".booking-wrapper");
+
   gsap.from(bookingWrapper, {
     scrollTrigger: {
       trigger: bookingWrapper,
@@ -191,6 +189,8 @@ const animateEarlyBooking = () => {
   });
 };
 const animateStartWithUs = () => {
+  const startInvestWithUs = document.querySelector(".start-invest-form");
+
   gsap.from(startInvestWithUs, {
     scrollTrigger: {
       trigger: startInvestWithUs,
@@ -201,16 +201,16 @@ const animateStartWithUs = () => {
   });
 };
 const animateFooter = () => {
-  const footer = document.querySelector("footer");
+  const footer = document.querySelector("footer > div");
 
   gsap.from(footer, {
     scrollTrigger: {
       trigger: footer,
-      start: "-200 center",
+      start: "-300 center",
     },
-    duration: 1,
+    duration: 0.5,
     opacity: 0,
-    y: -200,
+    y: -100,
   });
 };
 
