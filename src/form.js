@@ -208,7 +208,7 @@ nextButtonElement.addEventListener("click", () => {
       return;
     }
     user_answers["contactInfo"] = contactInfo;
-    currentQuestion++;
+    fbq("track", "Lead");
     console.log("Опрос завершен");
     console.log(user_answers);
   }
