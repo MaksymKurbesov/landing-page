@@ -7,16 +7,20 @@ const startInvestButton = document.querySelector(".start-invest-button");
 
 let menuIsOpen = false;
 
+export const closeMenu = () => {
+  mobileMenu.className = "mobile-menu";
+  hamburger.className = "hamburger";
+  bg.className = "menu-background";
+  document.body.style.overflow = "visible";
+
+  if (startInvestButton) {
+    startInvestButton.style.zIndex = "1";
+  }
+};
+
 hamburger.addEventListener("click", () => {
   if (menuIsOpen) {
-    mobileMenu.className = "mobile-menu";
-    hamburger.className = "hamburger";
-    bg.className = "menu-background";
-    document.body.style.overflow = "visible";
-
-    if (startInvestButton) {
-      startInvestButton.style.zIndex = "1";
-    }
+    closeMenu();
   } else {
     mobileMenu.className = "mobile-menu mobile-menu-open";
     hamburger.className = "hamburger hamburger-open";

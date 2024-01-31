@@ -8,6 +8,12 @@ const popupNameInput = document.querySelector(".popup-name");
 const popupPhoneInput = document.querySelector(".popup-phone");
 const submitPopupButton = document.querySelector(".submit-popup");
 
+const successPopup = document.querySelector(".success-popup");
+const popupFormWrapper = document.querySelector(".popup-form-wrapper");
+
+const confirmSuccessPopupBg = document.querySelector(".popup-confirm__bg");
+const confirmSuccessPopup = document.querySelector(".popup-confirm");
+
 const sendRequest = async (name, phone) => {
   await axios.post(
     "https://api.telegram.org/bot6564302403:AAG0OCnhKTBWedTFeoKAZnPolUu3t2MHvuw/sendMessage",
@@ -31,16 +37,8 @@ submitPopupButton.addEventListener("click", async (e) => {
   popupNameInput.value = "";
   popupPhoneInput.value = "";
 
-  submitPopupButton.innerHTML = "Отправлено!";
-  submitPopupButton.style.backgroundImage =
-    "linear-gradient(90deg, #f2f047, #1ed94f)";
-  submitPopupButton.style.color = "white";
-
-  setTimeout(() => {
-    submitPopupButton.innerHTML = "Отправить";
-    submitPopupButton.style.background = "white";
-    submitPopupButton.style.color = "#aa34f8";
-  }, 4000);
+  successPopup.classList.add("active");
+  popupFormWrapper.classList.add("active");
 });
 
 submitButton.addEventListener("click", async (e) => {
@@ -51,18 +49,9 @@ submitButton.addEventListener("click", async (e) => {
   if (name === "" || phone === "") return;
 
   await sendRequest(name, phone);
+  confirmSuccessPopupBg.classList.add("active");
+  confirmSuccessPopup.classList.add("active");
 
   nameInput.value = "";
   phoneInput.value = "";
-  submitButton.innerHTML = "Отправлено!";
-  submitButton.style.backgroundImage =
-    "linear-gradient(90deg, #f2f047, #1ed94f)";
-  submitButton.style.color = "white";
-  submitButton.style.border = "none";
-
-  setTimeout(() => {
-    submitButton.innerHTML = "Отправить заявку";
-    submitButton.style.background = "white";
-    submitButton.style.color = "#1f395c";
-  }, 4000);
 });

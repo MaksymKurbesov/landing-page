@@ -63,7 +63,7 @@ const QUIZ = [
     ],
   },
   {
-    question: "Как часто планируете выводить девиденды?",
+    question: "Как часто планируете выводить дивиденды?",
     answers: [
       "Реинвестирование: ускорение капитального роста.",
       "Еженедельный вывод: дополнительный доход.",
@@ -95,26 +95,17 @@ const contactInputs = () => {
   const optionsContainer = document.querySelector(".inputs-wrapper");
   const inputPhone = document.createElement("input");
   const inputName = document.createElement("input");
-  const inputEmail = document.createElement("input");
-  const inputMessenger = document.createElement("input");
 
   inputPhone.type = "text";
   inputName.type = "text";
-  // inputMessenger.type = "text";
-  // inputEmail.type = "text";
+
   inputPhone.id = "phone";
   inputName.id = "name";
-  // inputMessenger.id = "messenger";
-  // inputEmail.id = "email";
+
   inputPhone.placeholder = "Ваш номер телефона";
   inputName.placeholder = "Ваше имя";
-  // inputEmail.placeholder = "Ваш email";
-  // inputMessenger.placeholder = "Профиль в мессенджере";
-
   optionsContainer.appendChild(inputName);
   optionsContainer.appendChild(inputPhone);
-  // optionsContainer.appendChild(inputEmail);
-  // optionsContainer.appendChild(inputMessenger);
 };
 
 const displayStep = (step) => {
@@ -124,6 +115,8 @@ const displayStep = (step) => {
   if (step < QUIZ.length) {
     questionElement.innerHTML = QUIZ[step].question;
 
+    nextButtonElement.innerHTML = "Вперёд";
+
     QUIZ[step].answers.forEach((answer) => {
       const divContainer = document.createElement("div");
 
@@ -132,6 +125,10 @@ const displayStep = (step) => {
       radioButton.type = "radio";
       radioButton.name = "answer";
       radioButton.value = answer;
+
+      radioButton.addEventListener("change", (e) => {
+        nextButtonElement.disabled = !e.target.value;
+      });
 
       label.appendChild(radioButton);
       label.appendChild(document.createTextNode(answer));
@@ -143,11 +140,12 @@ const displayStep = (step) => {
       document.querySelector(
         `input[name="answer"][value="${user_answers[step]}"]`
       ).checked = true;
+      nextButtonElement.disabled = false;
+    } else {
+      nextButtonElement.disabled = true;
     }
-
-    console.log(user_answers, "user_answers");
-    console.log(user_answers[step - 1], "user_answers[step - 1]");
   } else {
+    nextButtonElement.innerHTML = "Отправить!";
     document.querySelector(".question").innerHTML =
       "Укажите в форме, пожалуйста, свои контактные данные";
 
@@ -173,6 +171,7 @@ displayStep(currentQuestion);
 
 backButtonElement.addEventListener("click", () => {
   const selectedOption = document.querySelector('input[name="answer"]:checked');
+
   if (selectedOption) {
     user_answers[currentQuestion] = selectedOption.value;
   }
@@ -181,6 +180,7 @@ backButtonElement.addEventListener("click", () => {
     questionListItems[currentQuestion].className = "";
     currentQuestion--;
     displayStep(currentQuestion);
+    nextButtonElement.disabled = false;
   }
 });
 
@@ -189,6 +189,7 @@ nextButtonElement.addEventListener("click", () => {
     const selectedOption = document.querySelector(
       'input[name="answer"]:checked'
     );
+
     if (!selectedOption) {
       errorMessage.style.opacity = "1";
       return;
@@ -200,6 +201,7 @@ nextButtonElement.addEventListener("click", () => {
 
   if (currentQuestion < QUIZ.length) {
     currentQuestion++;
+
     displayStep(currentQuestion);
   } else if (currentQuestion === QUIZ.length) {
     const contactInfo = document.getElementById("phone").value;
@@ -207,8 +209,9 @@ nextButtonElement.addEventListener("click", () => {
       alert("Пожалуйста, введите вашу контактную информацию.");
       return;
     }
+
     user_answers["contactInfo"] = contactInfo;
-    fbq("track", "Lead");
+    // fbq("track", "Lead");
     console.log("Опрос завершен");
     console.log(user_answers);
   }

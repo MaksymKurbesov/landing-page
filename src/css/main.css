@@ -840,7 +840,6 @@ footer nav {
 }
 
 .inputs-wrapper input[type=text]::placeholder {
-
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -867,6 +866,13 @@ footer nav {
   display: flex;
   justify-content: center;
   gap: 30px;
+}
+
+.buttons button:disabled {
+  border: 1px solid #999999;
+  background: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
 }
 
 .back-button-hide {

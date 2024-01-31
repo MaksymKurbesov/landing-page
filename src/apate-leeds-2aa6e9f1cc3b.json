@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "apate-leeds",
+  "private_key_id": "2aa6e9f1cc3b9c8da2ba756c46daae582a7de6eb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC25P76PMrkTV0u\nnY7MrTpypWpFZf2dQbPUleR9dc142HL/3heHYNfe9nEA2JpzeWMA/4pZC2/mTy6Z\njluApn9JVgv1109JxoqY9AxwFCm4apDT7L8sOdZUvlIKj6BuYrwjQ8eirfmazYwU\ntrIuaZhDxWKtt3jQqwp0FVu4wZZ9GzUsdD9KhON+Km/w8Oyfjbakecj43al7vxz+\nA/NfpyScwVz8MUml4ZS6a11RVCP5xjwFZ96Shjbv4CT+KC/PZT6dloQqKGcrDrWE\nenHUQqhNWFDm3Q7BlQAs7ZBunIqZTvtGnWQhxcjp8WvDMQcUdUJYqtFg2bbt5E/n\n5HWznQaVAgMBAAECggEAAIONBGU/PZk+9QFvr8blu3YYJ8Dxj5z1yClavpXcSMuu\n5H0OwiOSSpwgj21GjdGBLMCt9lTnfFsgU1jC0jyrVvoAJILp8rUpsMz2YCpsJ8Sg\n4f+ND/TLSA1mem3BJvWE4J+ULMnKzbLcmjbXjzrS/tVjMBcgj0XlNU4ymkayyVF3\n5UL7XGAYUe4daXUptmtRVH9ATnjtGS/tcfhoZMFd1FEO2BKf/MIg1L1Z29mEvFRS\n1/h05+sT/d+Z+EAq3kstMDza0knYwE4SPdZ5s78gxts/npiRHPFpC+3H2agwLK3t\nogKmdA6zfl96OkdvsR4e4+CXLCaddg+EyxxwR+z3twKBgQDqiLCvfG00u3aVevvr\noShpY3ZNiLb03gYOUY+PkdN+CDE2PebSDMJ1sFHoR+3KsjYcignQgfbYbBds96vT\nEad5eauDqmbPw4WdO1rXCV8NL0oYyVlHy3INWmmfv32TzBPlRUEolsOw2qbbvBhZ\nvvmdbCWq/uSx5JEZ99GDG6hD8wKBgQDHolq94e8Ho9PsPm56t9QtWHjarVDSKOdi\nW8U3BndlTH0YmHsLEPeAKcJtneMqSO8dvvJq0XN/0oVh2CnKoHuxmyswM3/wzZad\n8QuEPVE3KmgNO6bwRt3D5yrT0+jqGBl5jvbbMvQOmpyTRe+0Vi+cVRIBA+dG9ODH\ne7oOlnkVVwKBgQCKMIYisCbMdlR12SQMf0WHa0Juhsp+Vz+sOiRjjKHX1c3hTvHs\n+/WsUHrCaXdUAlNd13vW7mzasj3PR9NnJzTNn4IOr12qt2LH9QwePfhSlXWMSz8e\nzWHjOk2YAcVlS07BvV+aIdMmJn9AY4DZiGwddHZxXYS0yJ8ydNFu9eHcPwKBgGQG\nmBrOCps0Xenf+jEozHoP+zXuYzF55z2kJ7ODXO13nrJlLDmGPcyMn+uWkYzNUGoC\nE6qr2YgxLj2xNnddY7zAt6oGE9PO3umyLggLRRcz+0CuI93+U/1lZVMPuYMZoiID\nHPMFm715gHxWLV2ZVW+qPEQf9ZDa/4lUGAxZHsAvAoGBAKKmjQojeA0kIXulBrJt\nmQgZkddktsMm0WtUYcgnv4WAkmqu+5lpdpdKPuF7JJKQLrqgW3WfoJ3p4lFs8Wwm\nm6AUFtlRaCHeBxjJizO8rJdWA0t1a3vR0oM567dagrX3fSDzfzr2+bXKDQ6kIWnv\nNjj0GoD9UIjNRVsuCCnd9H6C\n-----END PRIVATE KEY-----\n",
+  "client_email": "apate-leeds@apate-leeds.iam.gserviceaccount.com",
+  "client_id": "100714442272025973670",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/apate-leeds%40apate-leeds.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
