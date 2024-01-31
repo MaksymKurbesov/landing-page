@@ -6,6 +6,9 @@ const popup = document.querySelector(".popup"); // Само окно
 const confirmPopup = document.querySelector(".popup-confirm"); // Само окно
 const confirmPopupBg = document.querySelector(".popup-confirm__bg"); // Само окно
 
+const successPopupBg = document.querySelector(".success-popup"); // Само окно
+const popupFormWrapper = document.querySelector(".popup-form-wrapper"); // Само окно
+
 const openPopupButtons = document.querySelectorAll(".open-popup"); // Кнопки для показа окна
 const closePopupButton = document.querySelector(".close-popup");
 const closeSuccessPopup = document.querySelector(".close-success-popup");
@@ -18,11 +21,11 @@ openPopupButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
     // Для каждой вешаем обработчик событий на клик
     e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+    closeMenu();
     popupBg.classList.add("active"); // Добавляем класс 'active' для фона
     popup.classList.add("active"); // И для самого окна
     document.body.style.overflow = "hidden";
     document.body.style.marginRight = "17px";
-    closeMenu();
   });
 });
 
@@ -39,6 +42,9 @@ CLOSE_BUTTONS.forEach((button) => {
 
     confirmPopup.classList.remove("active"); // И с окна
     confirmPopupBg.classList.remove("active"); // И с окна
+
+    successPopupBg.classList.remove("active"); // И с окна
+    popupFormWrapper.classList.remove("active"); // И с окна
 
     document.body.style.overflow = "visible";
     document.body.style.marginRight = "0";

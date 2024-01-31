@@ -39,6 +39,8 @@ submitPopupButton.addEventListener("click", async (e) => {
 
   successPopup.classList.add("active");
   popupFormWrapper.classList.add("active");
+  document.body.style.overflow = "hidden";
+  document.body.style.marginRight = "17px";
 });
 
 submitButton.addEventListener("click", async (e) => {
@@ -51,6 +53,8 @@ submitButton.addEventListener("click", async (e) => {
   await sendRequest(name, phone);
   confirmSuccessPopupBg.classList.add("active");
   confirmSuccessPopup.classList.add("active");
+  document.body.style.overflow = "hidden";
+  document.body.style.marginRight = "17px";
 
   nameInput.value = "";
   phoneInput.value = "";
