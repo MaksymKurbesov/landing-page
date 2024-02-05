@@ -14,7 +14,7 @@ const closePopupButton = document.querySelector(".close-popup");
 const closeSuccessPopup = document.querySelector(".close-success-popup");
 const closeConfirmPopup = document.querySelector(".close-confirm-popup");
 
-const CLOSE_BUTTONS = [closePopupButton, closeSuccessPopup, closeConfirmPopup];
+const CLOSE_BUTTONS = [closeSuccessPopup, closeConfirmPopup];
 
 openPopupButtons.forEach((button) => {
   // Перебираем все кнопки
@@ -49,6 +49,14 @@ CLOSE_BUTTONS.forEach((button) => {
     document.body.style.overflow = "visible";
     document.body.style.marginRight = "0";
   });
+});
+
+closePopupButton.addEventListener("click", () => {
+  popupBg.classList.remove("active"); // Убираем активный класс с фона
+  popup.classList.remove("active");
+
+  document.body.style.overflow = "visible";
+  document.body.style.marginRight = "0";
 });
 
 document.addEventListener("click", (e) => {

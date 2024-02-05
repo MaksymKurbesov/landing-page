@@ -25,6 +25,7 @@
     "google-auth-library": "^9.6.0",
     "google-spreadsheet": "^4.1.1",
     "gsap": "^3.12.5",
+    "intl-tel-input": "^19.2.16",
     "node-polyfill-webpack-plugin": "^3.0.0",
     "typed.js": "^2.1.0"
   }

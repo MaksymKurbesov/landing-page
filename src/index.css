@@ -113,6 +113,16 @@ a {
   mask-composite: exclude;
 }
 
+.iti__country-name {
+  color: var(--main-blue);
+}
+
+/*.iti__flag {background-image: url("path/to/flags.png");}*/
+
+/*@media (min-resolution: 2x) {*/
+/*  .iti__flag {background-image: url("path/to/flags@2x.png");}*/
+/*}*/
+
 @media screen and (max-width: 1200px) {
   .wrap {
     max-width: 70%;
@@ -459,9 +469,6 @@ a {
     margin-bottom: 40px;
   }
 
-  .inputs-wrapper > div {
-    padding: 8px;
-  }
 
   .up-page-button {
     width: 30px;
