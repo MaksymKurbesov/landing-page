@@ -10,11 +10,28 @@ const successPopupBg = document.querySelector(".success-popup"); // Само о�
 const popupFormWrapper = document.querySelector(".popup-form-wrapper"); // Само окно
 
 const openPopupButtons = document.querySelectorAll(".open-popup"); // Кнопки для показа окна
-const closePopupButton = document.querySelector(".close-popup");
+const closePopupButtons = document.querySelectorAll(".close-popup");
 const closeSuccessPopup = document.querySelector(".close-success-popup");
 const closeConfirmPopup = document.querySelector(".close-confirm-popup");
 
+const quizPopup = document.querySelector(".popup-quiz");
+const quizPopupBg = document.querySelector(".popup-quiz__bg");
+const closeQuizButton = document.querySelector(".close-quiz-confirm-popup");
+
 const CLOSE_BUTTONS = [closeSuccessPopup, closeConfirmPopup];
+
+if (closeQuizButton) {
+  closeQuizButton.addEventListener("click", () => {
+    if (quizPopup && quizPopupBg) {
+      quizPopup.classList.remove("active"); // И с окна
+      quizPopupBg.classList.remove("active");
+      window.location.href = "./";
+
+      document.body.style.overflow = "visible";
+      document.body.style.marginRight = "0px";
+    }
+  });
+}
 
 openPopupButtons.forEach((button) => {
   // Перебираем все кнопки
@@ -36,27 +53,36 @@ CLOSE_BUTTONS.forEach((button) => {
     e.preventDefault();
     window.scrollTo(0, 0);
 
+    console.log("closed");
+
     // Вешаем обработчик на крестик
     popupBg.classList.remove("active"); // Убираем активный класс с фона
     popup.classList.remove("active"); // И с окна
 
-    confirmPopup.classList.remove("active"); // И с окна
-    confirmPopupBg.classList.remove("active"); // И с окна
+    if (confirmPopup && confirmPopupBg) {
+      confirmPopup.classList.remove("active"); // И с окна
+      confirmPopupBg.classList.remove("active"); // И с окна
+    }
 
     successPopupBg.classList.remove("active"); // И с окна
     popupFormWrapper.classList.remove("active"); // И с окна
 
     document.body.style.overflow = "visible";
     document.body.style.marginRight = "0";
+
+    closeMenu(true);
   });
 });
 
-closePopupButton.addEventListener("click", () => {
-  popupBg.classList.remove("active"); // Убираем активный класс с фона
-  popup.classList.remove("active");
+closePopupButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    popupBg.classList.remove("active"); // Убираем активный класс с фона
+    popup.classList.remove("active");
 
-  document.body.style.overflow = "visible";
-  document.body.style.marginRight = "0";
+    document.body.style.overflow = "visible";
+    document.body.style.marginRight = "0";
+    closeMenu(true);
+  });
 });
 
 document.addEventListener("click", (e) => {

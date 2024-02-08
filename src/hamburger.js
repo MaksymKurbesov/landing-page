@@ -7,11 +7,17 @@ const startInvestButton = document.querySelector(".start-invest-button");
 
 let menuIsOpen = false;
 
-export const closeMenu = () => {
+export const closeMenu = (isPopup) => {
   mobileMenu.className = "mobile-menu";
   hamburger.className = "hamburger";
   bg.className = "menu-background";
   document.body.style.overflow = "visible";
+  // menuIsOpen = !menuIsOpen;
+
+  if (isPopup) {
+    menuIsOpen = false;
+    console.log("work");
+  }
 
   if (startInvestButton) {
     startInvestButton.style.zIndex = "1";

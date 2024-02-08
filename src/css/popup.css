@@ -39,7 +39,7 @@
   opacity: 0;
 }
 
-.popup__bg, .popup-confirm__bg {
+.popup__bg, .popup-confirm__bg, .popup-quiz__bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -53,7 +53,7 @@
 }
 
 
-.popup__bg.active, .popup-confirm__bg.active {
+.popup__bg.active, .popup-confirm__bg.active, .popup-quiz__bg.active {
   opacity: 1;
   pointer-events: all;
   transition: 0.5s all;
@@ -84,13 +84,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  /*background-image: linear-gradient(180deg,var(--gradient-A),var(--gradient-B));*/
   background-image: url('../assets/images/success-popup-bg.png');
   background-size: cover;
   background-position: center;
-  /*background: white;*/
   color: white;
-  /*backdrop-filter: blur(20px);*/
   width: 100%;
   max-width: 600px;
   padding: 50px 30px;
@@ -99,24 +96,44 @@
   border-radius: 20px;
 }
 
-.popup-confirm img {
+.popup-quiz {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translate(-50%, -50%) scale(0);
+  background-image: url('../assets/images/success-popup-bg.png');
+  background-size: cover;
+  background-position: center;
+  top: 50%;
+  left: 50%;
+  color: white;
+  width: 100%;
+  max-width: 600px;
+  padding: 50px 30px;
+  transition: 0.5s all;
+  border-radius: 20px;
+}
+
+.popup-confirm img, .popup-quiz img {
   margin-bottom: 40px;
 }
 
-.popup-confirm h3 {
+.popup-confirm h3, .popup-quiz h3 {
   text-align: center;
   font-size: 30px;
   margin-bottom: 30px;
 }
 
-.popup-confirm p {
+.popup-confirm p, .popup-quiz p {
   text-align: center;
   margin-bottom: 50px;
   opacity: 0.6;
   line-height: 1.5;
 }
 
-.popup-confirm button {
+.popup-confirm button, .popup-quiz button {
   font: inherit;
   color: white;
   border-radius: 20px;
@@ -148,7 +165,9 @@
   display: block;
 }
 
-.popup-confirm.active {
+.popup-confirm.active, .popup-quiz.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
   display: flex;
 }
 
@@ -228,12 +247,33 @@
 }
 
 
-
-@media screen and (max-width: 600px) {
-  .popup, .popup-confirm {
+@media screen and (max-width: 768px) {
+  .popup, .popup-quiz {
     width: 95%;
-    padding: 35px;
-    padding-top: 280px;
+    padding: 25px;
+  }
+
+  .popup-image {
+    display: none;
+  }
+
+  .close-popup {
+    top: 15px;
+    right: 15px;
+  }
+
+  .popup-subtitle, .popup-confirm h3 {
+    font-size: 20px !important;
+  }
+
+  .popup-confirm p, .popup-quiz p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .success-popup {
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .popup-confirm {
@@ -241,8 +281,10 @@
     padding: 35px;
   }
 
-  .close-popup {
-    top: 15px;
-    right: 15px;
+  .popup-confirm img {
+    display: none;
   }
+
+
 }
+

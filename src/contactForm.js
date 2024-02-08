@@ -6,7 +6,7 @@ const phoneInput = document.querySelector(".phone-input");
 
 const popupNameInput = document.querySelector(".popup-name");
 const popupPhoneInput = document.querySelector(".popup-phone");
-const submitPopupButton = document.querySelector(".submit-popup");
+const submitPopupButtons = document.querySelectorAll(".submit-popup");
 
 const successPopup = document.querySelector(".success-popup");
 const popupFormWrapper = document.querySelector(".popup-form-wrapper");
@@ -25,37 +25,45 @@ const sendRequest = async (name, phone) => {
   );
 };
 
-submitPopupButton.addEventListener("click", async (e) => {
-  e.preventDefault();
+const init = () => {
+  submitPopupButtons.forEach((button) => {
+    button.addEventListener("click", async (e) => {
+      e.preventDefault();
 
-  const name = popupNameInput.value;
-  const phone = popupPhoneInput.value;
-  if (name === "" || phone === "") return;
+      const name = popupNameInput.value;
+      const phone = popupPhoneInput.value;
+      if (name === "" || phone === "") return;
 
-  await sendRequest(name, phone);
+      await sendRequest(name, phone);
 
-  popupNameInput.value = "";
-  popupPhoneInput.value = "";
+      popupNameInput.value = "";
+      popupPhoneInput.value = "";
 
-  successPopup.classList.add("active");
-  popupFormWrapper.classList.add("active");
-  document.body.style.overflow = "hidden";
-  document.body.style.marginRight = "17px";
-});
+      successPopup.classList.add("active");
+      popupFormWrapper.classList.add("active");
+      document.body.style.overflow = "hidden";
+      document.body.style.marginRight = "17px";
+    });
+  });
 
-submitButton.addEventListener("click", async (e) => {
-  e.preventDefault();
+  if (!submitButton) return;
 
-  const name = nameInput.value;
-  const phone = phoneInput.value;
-  if (name === "" || phone === "") return;
+  submitButton.addEventListener("click", async (e) => {
+    e.preventDefault();
 
-  await sendRequest(name, phone);
-  confirmSuccessPopupBg.classList.add("active");
-  confirmSuccessPopup.classList.add("active");
-  document.body.style.overflow = "hidden";
-  document.body.style.marginRight = "17px";
+    const name = nameInput.value;
+    const phone = phoneInput.value;
+    if (name === "" || phone === "") return;
 
-  nameInput.value = "";
-  phoneInput.value = "";
-});
+    await sendRequest(name, phone);
+    confirmSuccessPopupBg.classList.add("active");
+    confirmSuccessPopup.classList.add("active");
+    document.body.style.overflow = "hidden";
+    document.body.style.marginRight = "17px";
+
+    nameInput.value = "";
+    phoneInput.value = "";
+  });
+};
+
+init();

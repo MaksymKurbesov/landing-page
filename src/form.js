@@ -5,6 +5,8 @@ import "./pageTransition";
 import intlTelInput from "intl-tel-input";
 import "intl-tel-input/build/css/intlTelInput.css";
 import { QUIZ } from "./QUIZ";
+import axios from "axios";
+import "./contactForm";
 
 const questionElement = document.querySelector(".question");
 const backButtonElement = document.querySelector(".back-button");
@@ -20,24 +22,29 @@ const user_answers = {};
 const contactInputs = () => {
   const inputPhone = document.createElement("input");
   const inputName = document.createElement("input");
+  const inputPhoneWrapper = document.createElement("div");
 
   inputPhone.type = "text";
   inputName.type = "text";
 
   inputPhone.id = "phone";
   inputName.id = "name";
+  inputPhoneWrapper.className = "input-phone-wrapper";
 
   inputPhone.style.width = "100%";
-  inputPhone.style.paddingLeft = "45px";
+  inputPhone.oninput = (e) =>
+    (e.target.value = e.target.value
+      .replace(/[^0-9.]/g, "")
+      .replace(/(\..*)\./g, "$1"));
+  inputPhone.style.paddingLeft = "35px";
   // inputPhone.value = "+";
   inputPhone.placeholder = "Ваш номер телефона";
   inputName.placeholder = "Ваше имя";
-  optionsContainer.appendChild(inputName);
-  optionsContainer.appendChild(inputPhone);
 
-  intlTelInput(inputPhone, {
-    showSelectedDialCode: true,
-  });
+  inputPhoneWrapper.appendChild(inputPhone);
+
+  optionsContainer.appendChild(inputName);
+  optionsContainer.appendChild(inputPhoneWrapper);
 };
 
 const displayStep = (step) => {
@@ -119,20 +126,53 @@ backButtonElement.addEventListener("click", () => {
 });
 
 nextButtonElement.addEventListener("click", () => {
+  const selectedOption = document.querySelector('input[name="answer"]:checked');
+
   if (currentQuestion < QUIZ.length) {
+    if (selectedOption) {
+      user_answers[currentQuestion] = selectedOption.value;
+    }
+
     currentQuestion++;
 
     displayStep(currentQuestion);
   } else if (currentQuestion === QUIZ.length) {
-    const contactInfo = document.getElementById("phone").value;
-    if (!contactInfo) {
+    const userPhone = document.getElementById("phone").value;
+    const userName = document.getElementById("name").value;
+
+    if (!userPhone || !userName) {
       alert("Пожалуйста, введите вашу контактную информацию.");
       return;
     }
 
-    user_answers["contactInfo"] = contactInfo;
+    const successPopupQuiz = document.querySelector(".popup-quiz");
+    const successPopupQuizBg = document.querySelector(".popup-quiz__bg");
+
+    successPopupQuiz.classList.add("active");
+    successPopupQuizBg.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+    document.body.style.marginRight = "17px";
+
     // fbq("track", "Lead");
-    console.log("Опрос завершен");
-    console.log(user_answers);
+
+    sendUserAnswers(userName, userPhone, user_answers);
   }
 });
+
+const sendUserAnswers = async (name, phone, answers) => {
+  const userAnswersStr = Object.values(answers)
+    .map((answer, index) => `${index + 1}. ${answer}\n`)
+    .join("");
+
+  console.log(userAnswersStr, "userAnswersStr");
+
+  await axios.post(
+    "https://api.telegram.org/bot6564302403:AAG0OCnhKTBWedTFeoKAZnPolUu3t2MHvuw/sendMessage",
+    {
+      chat_id: "-1002137027465",
+      parse_mode: "html",
+      text: `Имя: ${name}\nТелефон: ${phone}\nОтветы:\n<code>${userAnswersStr}</code>`,
+    }
+  );
+};
