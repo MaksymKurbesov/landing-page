@@ -617,12 +617,12 @@ video {
   font-weight: 700;
 }
 
-.send-userinfo-button:hover {
-  background: none;
-  color: white;
-  border: 2px solid white;
-  border-radius: 20px;
-}
+/*.send-userinfo-button:hover {*/
+/*  background: none;*/
+/*  color: white;*/
+/*  border: 2px solid white;*/
+/*  border-radius: 20px;*/
+/*}*/
 
 footer {
   padding: 40px 0;
