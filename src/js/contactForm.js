@@ -20,6 +20,9 @@ sendUserInfoButtonFromPopup.addEventListener("click", async (e) => {
   const phoneInput = document.querySelector(".consultation-popup__phone-input");
   const username = nameInput.value;
   const userPhone = phoneInput.value;
+
+  if (!username || !userPhone) return;
+
   hidePopup(".consultation-popup");
   await handleSubmit(username, userPhone);
 });
@@ -32,6 +35,8 @@ if (sendUserInfoButton) {
     const phoneInput = document.querySelector(".phone-input");
     const username = nameInput.value;
     const userPhone = phoneInput.value;
+
+    if (!username || !userPhone) return;
 
     await handleSubmit(username, userPhone);
   });
