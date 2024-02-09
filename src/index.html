@@ -360,14 +360,17 @@
           <h2 class="section-title">Начать инвестировать с нами</h2>
           <p>Введите номер телефона, чтобы получить подробную консультацию</p>
           <form>
-            <input class="name-input" type="text" placeholder="Ваше имя" />
-            <input
-              class="phone-input"
-              type="text"
-              placeholder="Ваш номер"
-              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-            />
-            <button class="send-request-button">Отправить заявку</button>
+            <label
+              ><input class="name-input" type="text" placeholder="Ваше имя"
+            /></label>
+            <label class="phone-input-label"
+              ><input
+                class="phone-input"
+                type="text"
+                placeholder="Ваш номер"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+            /></label>
+            <button class="send-userinfo-button">Отправить заявку</button>
           </form>
         </div>
       </div>
@@ -419,59 +422,68 @@
       </div>
     </footer>
     <div class="popup__bg">
-      <form class="popup">
+      <div class="consultation-popup custom-border">
+        <form>
+          <img
+            class="consultation-popup__image"
+            src="./assets/images/popup-bg.png"
+            width="100%"
+            height="250"
+          />
+          <div class="consultation-popup__wrapper">
+            <h3 class="consultation-popup__title">
+              Оставьте свои данные, и наш специалист свяжется с Вами в ближайшее
+              время, чтобы предоставить консультацию.
+            </h3>
+            <img
+              src="./assets/images/close.svg"
+              class="consultation-popup__close-button"
+              width="30"
+            />
+            <label>
+              <input
+                class="consultation-popup__name-input"
+                type="text"
+                name="name"
+                placeholder="Ваше имя"
+              />
+            </label>
+            <label>
+              <input
+                class="consultation-popup__phone-input"
+                type="tel"
+                name="tel"
+                placeholder="Ваш телефон"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              />
+            </label>
+            <button class="consultation-popup__submit-button" type="submit">
+              Отправить
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="confirm-consultation-popup custom-border">
         <img
-          class="popup-image"
-          src="./assets/images/popup-bg.png"
-          width="100%"
-          height="250"
+          class="confirm-consultation-popup__image"
+          src="./assets/images/success.png"
+          width="150"
         />
-        <div class="popup-form-wrapper">
-          <h3 class="popup-subtitle">
-            Оставьте свои данные, и наш специалист свяжется с Вами в ближайшее
-            время, чтобы предоставить консультацию.
-          </h3>
-          <img src="./assets/images/close.svg" class="close-popup" width="30" />
-          <label>
-            <input
-              class="popup-name"
-              type="text"
-              name="name"
-              placeholder="Ваше имя"
-            />
-          </label>
-          <label>
-            <input
-              class="popup-phone"
-              type="tel"
-              name="tel"
-              placeholder="Ваш телефон"
-              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-            />
-          </label>
-          <button class="submit-popup" type="submit">Отправить</button>
-        </div>
-        <div class="success-popup">
-          <img src="./assets/images/success.png" width="100" />
-          <h3>Отправлено!</h3>
-          <button class="close-success-popup">Закрыть</button>
-        </div>
-      </form>
-    </div>
-    <div class="up-page-button">
-      <img src="./assets/images/arrow.svg" width="35" />
-    </div>
-    <div class="popup-confirm__bg">
-      <div class="popup-confirm custom-border">
-        <img src="./assets/images/success.png" width="150" />
-        <h3>Ваша заявка на консультацию успешно отправлена!</h3>
-        <p>
+        <h3 class="confirm-consultation-popup__title">
+          Ваша заявка на консультацию успешно отправлена!
+        </h3>
+        <p class="confirm-consultation-popup__subtitle">
           Спасибо, что обратились к нам. В ближайшее время наш специалист
           свяжется с вами для уточнения деталей и предоставления консультации. С
           нетерпением ждем возможности помочь вам!
         </p>
-        <button class="close-confirm-popup">Закрыть</button>
+        <button class="confirm-consultation-popup__close-button">
+          Закрыть
+        </button>
       </div>
+    </div>
+    <div class="up-page-button">
+      <img src="./assets/images/arrow.svg" width="35" />
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </body>

@@ -578,17 +578,33 @@ video {
   padding: 15px;
   border: none;
   outline: none;
-  width: 30%;
+  /*width: 30%;*/
   background: rgba(255, 255, 255, 0.2);
   color: white;
   font: inherit;
+}
+
+.phone-input-label {
+  position: relative;
+}
+
+.phone-input-label input {
+  padding-left: 20px;
+}
+
+.phone-input-label:before {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
 }
 
 .start-invest-form-wrapper input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.send-request-button {
+.send-userinfo-button {
   transition: 0.35s ease all;
   background: white;
   color: var(--main-blue);
@@ -601,10 +617,11 @@ video {
   font-weight: 700;
 }
 
-.send-request-button:hover {
+.send-userinfo-button:hover {
   background: none;
   color: white;
   border: 2px solid white;
+  border-radius: 20px;
 }
 
 footer {
@@ -696,6 +713,8 @@ footer nav {
   width: 20px;
   filter: invert(1);
 }
+
+
 
 /********************************** FORM **********************************/
 
@@ -805,6 +824,26 @@ footer nav {
   grid-template-rows: 50% 50%;
   gap: 5px;
   margin-top: auto;
+}
+
+.inputs-wrapper select {
+  padding: 25px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font: inherit;
+
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+.inputs-wrapper option {
+  color: black;
 }
 
 .input-wrapper {

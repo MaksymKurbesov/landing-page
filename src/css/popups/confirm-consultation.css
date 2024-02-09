@@ -1,0 +1,68 @@
+.confirm-consultation-popup {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-image: url('../../assets/images/success-popup-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  width: 90%;
+  max-width: 600px;
+  padding: 50px 30px;
+  transition: 0.5s all;
+  display: none;
+  border-radius: 20px;
+}
+
+.confirm-consultation-popup.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
+  display: flex;
+}
+
+
+.confirm-consultation-popup__image {
+  margin-bottom: 40px;
+}
+
+.confirm-consultation-popup__title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.confirm-consultation-popup__subtitle {
+  text-align: center;
+  margin-bottom: 50px;
+  opacity: 0.6;
+  line-height: 1.5;
+}
+
+.confirm-consultation-popup button {
+  font: inherit;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 55px;
+  background-image: linear-gradient(180deg,var(--gradient-A),var(--gradient-B));
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+  .confirm-consultation-popup__image {
+    display: none;
+  }
+
+  .confirm-consultation-popup__title {
+    font-size: 20px;
+  }
+
+  .confirm-consultation-popup__subtitle {
+    margin-bottom: 20px;
+  }
+}
