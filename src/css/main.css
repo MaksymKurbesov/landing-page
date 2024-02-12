@@ -832,7 +832,7 @@ footer nav {
   outline: none;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
   font: inherit;
 
   appearance: none;
@@ -896,6 +896,11 @@ footer nav {
 
 .inputs-wrapper input[type=text]::placeholder {
   color: rgba(255, 255, 255, 0.5);
+}
+
+select option:disabled {
+  background: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .input-wrapper label {

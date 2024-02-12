@@ -66,3 +66,14 @@
     margin-bottom: 20px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .confirm-consultation-popup__title {
+    text-align: left;
+  }
+
+  .confirm-consultation-popup__subtitle {
+    text-align: left;
+  }
+}
+

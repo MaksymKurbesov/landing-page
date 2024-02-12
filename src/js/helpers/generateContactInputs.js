@@ -21,10 +21,17 @@ export const generateContactInputs = () => {
   selectMessenger.id = "messenger";
   inputPhoneWrapper.className = "input-phone-wrapper";
 
-  MESSANGERS.forEach((messenger) => {
+  MESSANGERS.forEach((messenger, index) => {
     const option = document.createElement("option");
 
+    if (index === 0) {
+      selectMessenger.onchange = () => {
+        option.disabled = true;
+      };
+    }
+
     option.value = messenger;
+    option.value = "Выберите какой месенджер предпочитаете";
     option.text = messenger;
     selectMessenger.appendChild(option);
   });
