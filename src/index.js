@@ -11,15 +11,9 @@ import { initHandlers } from "./js/addHandlers";
 
 if (module.hot) module.hot.accept();
 
-// document.addEventListener("load", () => {
-//   document.querySelector(".preloader").style.display = "none";
-//   document.querySelector(".index-content").style.display = "block";
-//   console.log("loaded");
-// });
-
 const linkEls = document.head.querySelectorAll("style");
 
-let cssLoaded = false;
+initHandlers();
 
 let arr = [];
 
@@ -34,6 +28,3 @@ Promise.all(arr).then(() => {
   document.querySelector(".preloader").style.display = "none";
   document.querySelector(".index-content").style.display = "block";
 });
-
-//
-// initHandlers();

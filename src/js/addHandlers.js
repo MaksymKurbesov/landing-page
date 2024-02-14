@@ -1,5 +1,6 @@
 import { hidePopup, showPopup } from "./PopupController";
 import { resetQuiz } from "../form";
+import { closeMenu } from "./hamburger";
 
 const handleListenerOnConsultButtons = () => {
   const getConsultButtons = document.querySelectorAll(".consult-button");
@@ -7,6 +8,7 @@ const handleListenerOnConsultButtons = () => {
   getConsultButtons.forEach((button) => {
     button.addEventListener("click", () => {
       showPopup(".consultation-popup");
+      closeMenu(true);
     });
   });
 };
