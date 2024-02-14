@@ -1,4 +1,5 @@
 import { hidePopup, showPopup } from "./PopupController";
+import { resetQuiz } from "../form";
 
 const handleListenerOnConsultButtons = () => {
   const getConsultButtons = document.querySelectorAll(".consult-button");
@@ -25,10 +26,22 @@ const handleOnCloseButtonWithRedirect = () => {
     ".confirm-consultation-popup__close-button"
   );
 
+  const closePopupsQuiz = document.querySelectorAll(
+    ".confirm-consultation-popup__close-button-quiz"
+  );
+
   closePopups.forEach((button) => {
     button.addEventListener("click", () => {
       hidePopup(".confirm-consultation-popup");
       window.location.href = "/";
+    });
+  });
+
+  closePopupsQuiz.forEach((button) => {
+    button.addEventListener("click", () => {
+      hidePopup(".confirm-consultation-popup");
+      resetQuiz();
+      hidePopup(".popup-quiz");
     });
   });
 };

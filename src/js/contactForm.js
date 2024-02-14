@@ -25,6 +25,9 @@ sendUserInfoButtonFromPopup.addEventListener("click", async (e) => {
 
   hidePopup(".consultation-popup");
   await handleSubmit(username, userPhone);
+
+  nameInput.value = "";
+  phoneInput.value = "";
 });
 
 if (sendUserInfoButton) {
@@ -39,5 +42,8 @@ if (sendUserInfoButton) {
     if (!username || !userPhone) return;
 
     await handleSubmit(username, userPhone);
+
+    nameInput.value = "";
+    phoneInput.value = "";
   });
 }

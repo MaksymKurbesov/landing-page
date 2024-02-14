@@ -10,7 +10,7 @@ export const sendUserAnswers = async (name, phone, userMessenger, answers) => {
     {
       chat_id: "-1002137027465",
       parse_mode: "html",
-      text: `Имя: ${name}\nТелефон: ${phone}\nМессенджер: ${userMessenger}\nО тветы:\n<code>${userAnswersStr}</code>`,
+      text: `Имя: ${name}\nТелефон: ${phone}\nМессенджер: ${userMessenger}\nОтветы:\n<code>${userAnswersStr}</code>`,
     }
   );
 };

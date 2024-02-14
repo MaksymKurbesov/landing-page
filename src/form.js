@@ -16,14 +16,31 @@ const nextButtonElement = document.querySelector(".next-button");
 const questionListItems = document.querySelectorAll(".questions li");
 const mobileQuestionCount = document.querySelector(".mobile-questions span");
 
-initHandlers();
-
 let currentQuestion = 0;
 
-const user_answers = {};
+let user_answers = {};
 
-const displayStep = (step) => {
+initHandlers();
+
+export const resetQuiz = () => {
+  currentQuestion = 0;
+  user_answers = {};
+  displayStep(0);
+
+  questionListItems[questionListItems.length - 1].classList.remove(
+    "active-question"
+  );
+
+  questionListItems.forEach((item) => {
+    item.classList.remove("success-question");
+  });
+};
+
+export const displayStep = (step) => {
   const optionsContainer = document.querySelector(".inputs-wrapper");
+
+  if (!optionsContainer) return;
+
   optionsContainer.innerHTML = "";
 
   if (step < QUIZ.length) {
@@ -67,46 +84,54 @@ const displayStep = (step) => {
 
 displayStep(currentQuestion);
 
-backButtonElement.addEventListener("click", () => {
-  const selectedOption = document.querySelector('input[name="answer"]:checked');
+if (backButtonElement) {
+  backButtonElement.addEventListener("click", () => {
+    const selectedOption = document.querySelector(
+      'input[name="answer"]:checked'
+    );
 
-  if (selectedOption) {
-    user_answers[currentQuestion] = selectedOption.value;
-  }
-
-  if (currentQuestion > 0) {
-    questionListItems[currentQuestion].className = "";
-    currentQuestion--;
-    displayStep(currentQuestion);
-    nextButtonElement.disabled = false;
-  }
-});
-
-nextButtonElement.addEventListener("click", () => {
-  const selectedOption = document.querySelector('input[name="answer"]:checked');
-
-  if (currentQuestion < QUIZ.length) {
     if (selectedOption) {
       user_answers[currentQuestion] = selectedOption.value;
     }
 
-    currentQuestion++;
-
-    displayStep(currentQuestion);
-  } else if (currentQuestion === QUIZ.length) {
-    const userPhone = document.getElementById("phone").value;
-    const userName = document.getElementById("name").value;
-    const userMessenger = document.getElementById("messenger").value;
-
-    if (!userPhone || !userName) {
-      alert("Пожалуйста, введите вашу контактную информацию.");
-      return;
+    if (currentQuestion > 0) {
+      questionListItems[currentQuestion].className = "";
+      currentQuestion--;
+      displayStep(currentQuestion);
+      nextButtonElement.disabled = false;
     }
+  });
+}
 
-    showPopup(".popup-quiz");
+if (nextButtonElement) {
+  nextButtonElement.addEventListener("click", () => {
+    const selectedOption = document.querySelector(
+      'input[name="answer"]:checked'
+    );
 
-    // fbq("track", "Lead");
+    if (currentQuestion < QUIZ.length) {
+      if (selectedOption) {
+        user_answers[currentQuestion] = selectedOption.value;
+      }
 
-    sendUserAnswers(userName, userPhone, userMessenger, user_answers);
-  }
-});
+      currentQuestion++;
+
+      displayStep(currentQuestion);
+    } else if (currentQuestion === QUIZ.length) {
+      const userPhone = document.getElementById("phone").value;
+      const userName = document.getElementById("name").value;
+      const userMessenger = document.getElementById("messenger").value;
+
+      if (!userPhone || !userName) {
+        alert("Пожалуйста, введите вашу контактную информацию.");
+        return;
+      }
+
+      showPopup(".popup-quiz");
+
+      // fbq("track", "Lead");
+
+      sendUserAnswers(userName, userPhone, userMessenger, user_answers);
+    }
+  });
+}

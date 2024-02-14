@@ -1,9 +1,4 @@
-const MESSANGERS = [
-  "Выберите какой месенджер предпочитаете",
-  "WhatsApp",
-  "Viber",
-  "Telegram",
-];
+const MESSANGERS = ["Выберите мессенджер", "WhatsApp", "Viber", "Telegram"];
 
 export const generateContactInputs = () => {
   const optionsContainer = document.querySelector(".inputs-wrapper");
@@ -31,7 +26,7 @@ export const generateContactInputs = () => {
     }
 
     option.value = messenger;
-    option.value = "Выберите какой месенджер предпочитаете";
+    option.value = "Выберите мессенджер";
     option.text = messenger;
     selectMessenger.appendChild(option);
   });
