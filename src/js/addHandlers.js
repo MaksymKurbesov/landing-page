@@ -42,7 +42,7 @@ const handleOnCloseButtonWithRedirect = () => {
   closePopupsQuiz.forEach((button) => {
     button.addEventListener("click", () => {
       hidePopup(".confirm-consultation-popup");
-      resetQuiz();
+      // resetQuiz();
       hidePopup(".popup-quiz");
     });
   });
