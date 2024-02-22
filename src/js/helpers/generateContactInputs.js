@@ -26,7 +26,7 @@ export const generateContactInputs = () => {
     }
 
     option.value = messenger;
-    option.value = "Выберите мессенджер";
+    // option.value = "Выберите мессенджер";
     option.text = messenger;
     selectMessenger.appendChild(option);
   });

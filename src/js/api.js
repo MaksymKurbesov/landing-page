@@ -5,6 +5,13 @@ export const sendUserAnswers = async (name, phone, userMessenger, answers) => {
     .map((answer, index) => `${index + 1}. ${answer}\n`)
     .join("");
 
+  await axios.post("https://apatecyprusestate-server.site:3000/add-users", {
+    username: name,
+    phone,
+    messenger: userMessenger,
+    answers,
+  });
+
   await axios.post(
     "https://api.telegram.org/bot6564302403:AAG0OCnhKTBWedTFeoKAZnPolUu3t2MHvuw/sendMessage",
     {

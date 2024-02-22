@@ -132,6 +132,7 @@ if (nextButtonElement) {
       // fbq("track", "Lead");
 
       sendUserAnswers(userName, userPhone, userMessenger, user_answers);
+      resetQuiz();
     }
   });
 }
