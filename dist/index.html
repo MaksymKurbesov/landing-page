@@ -67,7 +67,7 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js"
       );
-      fbq("init", "idpixel");
+      fbq("init", "939839290534284");
       fbq("track", "PageView");
     </script>
     <noscript
@@ -485,6 +485,7 @@
                   type="text"
                   name="name"
                   placeholder="Ваше имя"
+                  id="name"
                 />
               </label>
               <label>
@@ -492,6 +493,7 @@
                   class="consultation-popup__phone-input"
                   type="tel"
                   name="tel"
+                  id="phone"
                   placeholder="Ваш телефон"
                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                 />

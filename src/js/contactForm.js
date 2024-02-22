@@ -9,7 +9,7 @@ const sendUserInfoButtonFromPopup = document.querySelector(
 const handleSubmit = async (name, phone) => {
   if (!name || !phone) return;
 
-  await sendUserData(phone, phone);
+  await sendUserData(name, phone);
   showPopup(".confirm-consultation-popup");
 };
 
