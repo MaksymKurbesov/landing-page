@@ -129,8 +129,6 @@ if (nextButtonElement) {
 
       showPopup(".popup-quiz");
 
-      // fbq("track", "Lead");
-
       sendUserAnswers(userName, userPhone, userMessenger, user_answers);
       resetQuiz();
     }

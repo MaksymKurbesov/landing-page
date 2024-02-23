@@ -259,7 +259,7 @@ video {
 
 .change-life {
   padding: 80px 0;
-  background-image: url('../assets/images/smoke-background.png');
+  background-image: url('../assets/images/smoke-background.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -558,7 +558,7 @@ video {
 .start-invest-form-wrapper {
   position: relative;
   background-color: rgba(255, 255, 255, 0.07);
-  background-image: url('../assets/images/start-invest-bg.png');
+  background-image: url('../assets/images/start-invest-bg.webp');
   background-position: center right 20px;
   background-repeat: no-repeat;
   background-size: auto 80%;

@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   transform: translate(-50%, -50%) scale(0);
-  background-image: url('../../assets/images/success-popup-bg.png');
+  background-image: url('../../assets/images/success-popup-bg.webp');
   background-size: cover;
   background-position: center;
   top: 50%;

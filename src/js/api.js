@@ -20,6 +20,8 @@ export const sendUserAnswers = async (name, phone, userMessenger, answers) => {
       text: `Имя: ${name}\nТелефон: ${phone}\nМессенджер: ${userMessenger}\nОтветы:\n<code>${userAnswersStr}</code>`,
     }
   );
+
+  fbq("track", "Lead");
 };
 
 export const sendUserData = async (name, phone) => {
@@ -31,4 +33,6 @@ export const sendUserData = async (name, phone) => {
       text: `Имя: ${name}\nТелефон: ${phone}`,
     }
   );
+
+  fbq("track", "Lead");
 };
